@@ -12,5 +12,6 @@ int main()
 	else if (year % 100 == 0)cout << false;
 	else if (year % 4 == 0)cout << true;
 	else cout << false;
+	return 0;
 }
 

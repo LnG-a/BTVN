@@ -10,4 +10,5 @@ int main()
 	bool b = false;
 	if (x > y && y > z || x < y && y < z) b = true;
 	cout << boolalpha << b;
+	return 0;
 }

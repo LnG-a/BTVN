@@ -9,4 +9,5 @@ int main()
 	cin >> a >> b >> c;
 	double p = (a + b + c) / 2;
 	cout << fixed << setprecision(2) << sqrt((p - a) * (p - b) * (p - c) * p);
+	return 0;
 }

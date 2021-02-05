@@ -25,4 +25,5 @@ int main()
 		cout << endl;
 	}
 	cout << "so lan Bob chon dung la: " << so_lan_dung;
+	return 0;
 }

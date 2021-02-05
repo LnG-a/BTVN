@@ -65,5 +65,5 @@ int main()
 		}
 	}
 	cout << the_median;
-
+	return 0;
 }

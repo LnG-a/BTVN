@@ -25,4 +25,5 @@ int main()
 	cout << "Mean: " << tong / 3 << endl;
 	cout << "Max: " << max << endl;
 	cout << "Min: " << min;
+	return 0;
 }

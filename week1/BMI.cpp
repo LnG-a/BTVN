@@ -8,4 +8,5 @@ int main()
 	double can_nang, chieu_cao;
 	cin >> can_nang >> chieu_cao;
 	cout << fixed << setprecision(2) << can_nang / (chieu_cao * chieu_cao);
+	return 0;
 }

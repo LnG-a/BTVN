@@ -16,4 +16,5 @@ int main()
 		if (n == -1)cout << "Bye";
 		cin >> n;
 	}
+	return 0;
 }
