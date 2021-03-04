@@ -25,8 +25,9 @@ bool check_hau(const int& n, bool** ban_co)
 				{
 					for (int l = 0; l < n; l++)
 					{
-						if (l == k + j - i) if (ban_co[k][l] == true)return false;
-						if (l == -k + j + i) if (ban_co[k][l] == true)return false;
+						if (k == i && l == j) continue;
+						if (l - k == j - i) if (ban_co[k][l] == true)return false;
+						if (l + k == j + i) if (ban_co[k][l] == true)return false;
 					}
 				}
 			}
