@@ -5,7 +5,11 @@
 
 using namespace std;
 
-
+bool la_nam_nhuan(int year)
+{
+	if (year % 400 == 0 || year % 4 == 0 && year % 100 != 0) return true;
+	return false;
+}
 
 long day(const int& ngay, const int& thang, const int& nam)
 {
