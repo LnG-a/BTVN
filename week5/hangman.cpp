@@ -9,10 +9,10 @@ const string FIGURE[] = { "fig0","fig1","fig2","fig3","fig4","fig5","fig6","fig7
 
 string choose_word()
 {
-	srand(time(0));
-	int a=0;
+	//srand(time(0));
+	int a = 0;
 	string str;
-	ifstream infile ("file_word.txt");
+	ifstream infile("file_word.txt");
 	while (!infile.eof())
 	{
 		getline(infile, str);
@@ -20,7 +20,7 @@ string choose_word()
 	}
 	infile.close();
 	ifstream innfile("file_word.txt");
-	int word_count = a-1;
+	int word_count = a - 1;
 	int random_index = rand() & word_count;
 	for (int i = 0; i < random_index; i++)
 	{
@@ -30,12 +30,12 @@ string choose_word()
 }
 bool contains(string word, char guess)
 {
-	if (word.find(guess) == string::npos) return false;
-	if (word.find(guess + 32) == string::npos) return false;
-	if (word.find(guess - 32) == string::npos) return false;
-	return true;
+	if (word.find(guess) != string::npos) return true;
+	if (word.find(guess + 32) != string::npos) return true;
+	if (word.find(guess - 32) != string::npos) return true;
+	return false;
 }
-void update(string& guessed_word,const string& word,const char& guess)
+void update(string& guessed_word, const string& word, const char& guess)
 {
 	for (int i = 0; i < word.length(); i++)
 	{
@@ -47,7 +47,7 @@ void render_game(string guessed_word, int bad_guess, char& guess)
 	//cout << FIGURE[bad_guess] << endl;
 	cout << "The word is: " << guessed_word << endl;
 	cout << "Wrong guesses: " << bad_guess << endl;
-	cout << "Your guess: " ;
+	cout << "Your guess: ";
 	cin >> guess;
 	cout << endl;
 	cout << "--------------------------------------------" << endl;
@@ -66,13 +66,13 @@ int main()
 		else guessed_word.append("-");
 	}
 	do
-	{	
+	{
 		render_game(guessed_word, bad_guess, guess);
 		if (contains(word, guess)) update(guessed_word, word, guess);
 		else bad_guess++;
 	} while (bad_guess < max_bad_guesses && word != guessed_word);
-	
-	if (bad_guess < max_bad_guesses) cout << "YOU WIN!" ;
+
+	if (bad_guess < max_bad_guesses) cout << "YOU WIN!";
 	else
 	{
 		//cout << FIGURE[max_bad_guesses] << endl;
