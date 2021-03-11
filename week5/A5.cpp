@@ -1,5 +1,7 @@
 #include<iostream>
+
 using namespace std;
+
 int x1 = 10;
 int x2 = 20;
 int xx(int&);
