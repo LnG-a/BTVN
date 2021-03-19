@@ -121,18 +121,19 @@ void printField(int** field, int m, int n, int x, int y)
 void printMine(int** field, int m, int n)
 {
 	for (int i = 0; i < 60; i++) cout << endl;
-	cout << setw(width_of_a_square * 2 - 1) << ' ';
+	cout << setw(width_of_a_square * 2 - 2) << ' ';
 	for (int i = 0; i < n; i++) {
 		cout << setw(width_of_a_square) << i + 1;
 	}
 	cout << endl << endl;
 	for (int i = 0; i < m; i++) {
 		cout << setw(width_of_a_square) << i + 1;
-		cout << setw(width_of_a_square - 1) << "";
+		cout << setw(width_of_a_square - 2) << "";
 		for (int j = 0; j < n; j++) {
 			if (field[i][j] == there_is_a_bomb_here) cout << setw(width_of_a_square) << 'x';
 			else if (field[i][j] == not_be_digged) cout << setw(width_of_a_square) << '-';
-			else cout << setw(2) << field[i][j];
+			else if (field[i][j] == 0) cout << setw(width_of_a_square) << "";
+			else cout << setw(width_of_a_square) << field[i][j];
 		}
 		cout << endl;
 	}
