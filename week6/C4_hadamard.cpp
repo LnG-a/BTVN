@@ -74,8 +74,6 @@ int main()
     }
     b[1][1] = 1;
 
-
-    print(Hadamard_function(a, size, b), size);
-
+    print(Hadamard_function(a, size, b), size)
     return 0;
 }
