@@ -4,7 +4,6 @@ using namespace std;
 
 bool check_hau(const int& n, int* x, int* y)
 {
-	int k, l;
 	for (int i = 0; i < n; i++)
 	{
 		for (int j = i + 1; j < n; j++)
