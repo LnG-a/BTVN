@@ -1,5 +1,5 @@
 #include <iostream>
-#include <assert.h>>
+#include <assert.h>
 
 using namespace std;
 
@@ -30,23 +30,27 @@ struct DLinkedList
         tail->pre = head;
         head->pre = NULL;
         tail->next = NULL;
+        head->element = "";
+        tail->element = "";
         size = 2;
     }
 
     void addFirst(const char* s)
     {
         Node* newNode = new Node;
-        newNode->element = s;
-        newNode->pre = NULL;
-        newNode->next = head;
+        newNode->element = "";
+        head->element = s;
         head->pre = newNode;
+        newNode->next = head;
+        newNode->pre = NULL;
         head = newNode;
         size++;
     }
     void addLast(const char* s)
     {
         Node* newNode = new Node;
-        newNode->element = s;
+        tail->element = s;
+        newNode->element = "";
         newNode->next = NULL;
         newNode->pre = tail;
         tail->next = newNode;
@@ -54,9 +58,9 @@ struct DLinkedList
         size++;
     }
     void print()
-    {   
-        assert(head != NULL);
-        for (Node* p = head; p != NULL; p = p->next) {
+    {
+        //assert(head != NULL);
+        for (Node* p = head->next; p != tail; p = p->next) {
 
             cout << p->element << " ";
         }
@@ -64,7 +68,7 @@ struct DLinkedList
     }
     void removeFirst()
     {
-        assert(head != NULL || tail != NULL);
+        //assert(head != NULL || tail != NULL);
         Node* tmp;
         tmp = head;
         head = head->next;
@@ -74,7 +78,7 @@ struct DLinkedList
     }
     void destructor()
     {
-        assert(head != NULL||tail!=NULL);
+        //assert(head != NULL || tail != NULL);
         long tmp = size;
         for (int i = 0; i < tmp; i++)
         {
@@ -84,7 +88,7 @@ struct DLinkedList
     }
     void removeLast()
     {
-        assert(head != NULL || tail != NULL);
+        //assert(head != NULL || tail != NULL);
         Node* temp = new Node;
         temp = tail;
         tail = tail->pre;
@@ -93,7 +97,7 @@ struct DLinkedList
         size--;
     }
     void insertAfter(Node* p, const char* s)
-    {   
+    {
         assert(p != NULL && s != NULL);
         size++;
         Node* newNode = new Node;
@@ -104,7 +108,7 @@ struct DLinkedList
         newNode->next->pre = newNode;
     }
     const char* remove(Node* p)
-    {   
+    {
         assert(p != NULL);
         const char* ch = p->element;
         if (p == head)
@@ -147,28 +151,28 @@ void testA2(DLinkedList& L)
 
 void testA3(DLinkedList& L)
 {
-    cout << "A3" << endl;
+    cout << "A3:" << endl;
     L.destructor();
     L.print();
 }
 
 void testA4(DLinkedList& L)
 {
-    cout << "A4" << endl;
+    cout << "A4:" << endl;
     L.removeLast();
     L.print();
 }
 
 void testA5(DLinkedList& L)
 {
-    cout << "A5" << endl;
+    cout << "A5:" << endl;
     L.insertAfter(L.head, "afterFirst");
     L.print();
 }
 
 void testA6(DLinkedList& L)
 {
-    cout << "A6" << endl;
+    cout << "A6:" << endl;
     cout << L.remove(L.head) << endl;
     L.print();
 }
