@@ -6,10 +6,11 @@ bool check_hau(const int& n, int* x, int* y)
 {
 	for (int i = 0; i < n; i++)
 	{
+
 		for (int j = i + 1; j < n; j++)
 		{
-			if (x[i] = x[j])return true;
-			if (y[i] = y[j]) return true;
+			if (x[i] == x[j])return true;
+			if (y[i] == y[j]) return true;
 			if (y[i] - x[i] == y[j] - x[j]) return true;
 			if (y[i] + x[i] == y[j] + x[j]) return true;
 		}

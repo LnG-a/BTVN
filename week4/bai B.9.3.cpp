@@ -19,7 +19,7 @@ bool check_hau(const int& n, int* a, int* x)
 	{
 		for (int j = i + 1; j < n; j++)
 		{
-			if (a[i] = a[j]) return true;
+			if (a[i] == a[j]) return true;
 			if (a[i] - i == a[j] - j) return true;
 			if (a[i] + i == a[j] + j) return true;
 		}
