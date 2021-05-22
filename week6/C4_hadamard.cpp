@@ -30,8 +30,8 @@ void print(int** a, int size)
     {
         for (int j = 0; j < size; j++)
         {
-            if (a[i][j] == 1) cout << setw(2) << 'o';
-            else cout << setw(2) << ".";
+            if (a[i][j] == 1) cout << 'o';
+            else cout  << ".";
         }
         cout << endl;
     }
@@ -74,6 +74,6 @@ int main()
     }
     b[1][1] = 1;
 
-    print(Hadamard_function(a, size, b), size)
+    print(Hadamard_function(a, size, b), size);
     return 0;
 }
